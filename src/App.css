@@ -45,3 +45,22 @@
   justify-content: center;
   align-items: center;
 }
+
+/* New Styles Below*/
+
+.custom-nav-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 8vh;
+}
+.nav-block{
+  cursor: pointer;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid;
+  border-radius: 12px;
+}
+.nav-block:hover{
+  color: #009a9a;
+}
