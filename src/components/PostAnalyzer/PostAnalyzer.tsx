@@ -6,7 +6,10 @@ export default function PostAnalyzer(){
 
     const [inputFieldValues, setInputFieldValues] = useState<string[]>([''])
 
-
+    interface KeywordCount {
+        [key: string]: number;
+    }
+    let keywordCount: KeywordCount = {};
     
     function addNewInputField(e: FormEvent){
         e.preventDefault()
@@ -26,38 +29,44 @@ export default function PostAnalyzer(){
             rawText[i] = rawText[i].replace(/[.,!?]/g, "");
         }
 
-        console.log('Raw text before the split: ', rawText)
-
         let treatedText: Array<Array<string>> = [[]]
         
         for(let i = 0; i < rawText.length; i++){
             treatedText[i] = rawText[i].split(" ")
         }
-        
-        console.log('Final treated text: ', treatedText)
-        
-        // let myString = "Hello, world! How are you today?";
-        // myString = myString.replace(/[.,!?]/g, "");
-        
-        
-        
-        // let myArray = myString.split(" ");
-        // Do the analysis here.
-        
-        // for(let i = 0; i < inputFieldValues.length; i++){
-        //     setInputFieldValues(inputFieldValues[])
-        // }
 
-        // toLowercase
+        console.log('Treated Text: ', treatedText) // Ok
 
-        // removeCommmasAnd.
+        for(let i = 0; i < treatedText.length; i++){
 
-
-
-
-        // Do the analysis here.
+            console.log('called the first for loop in the verification.')
+            console.log('treatedText[i] value: ', treatedText[i])
+            console.log('treatedText[i][n] value: ', treatedText[i][1])
+            for(let n = 0; n < treatedText[i].length; n++)
+            {
+                console.log('last for loop called ', n, ' times')
+                console.log('treatedText[i][n] value: ', treatedText[i][n])
+                console.log('keywordCount value: ', keywordCount)
+                if(keywordCount[treatedText[i][n]]){
+                    keywordCount[treatedText[i][n]]++
+                } else {
+                    keywordCount[treatedText[i][n]] = 1;
+                }
+                
+                // for(let z = 0; z < keywordCount.length; z++){
+                //     if(keywordCount[treatedText[i][n]]){
+                //         keywordCount[treatedText[i][n]]++
+                //     }
+                // }
+            
+            }
+        
+        }
+        
+        console.log(keywordCount)
 
     }
+
 
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>, index: number){
         let newInputFieldValues = [...inputFieldValues];
