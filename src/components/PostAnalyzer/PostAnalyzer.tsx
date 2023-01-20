@@ -17,20 +17,10 @@ export default function PostAnalyzer(){
     function handleAnalysis(e: FormEvent){
         e.preventDefault()
 
-        let rawText: string[] = []
-
-        for(let i = 0; i < inputFieldValues.length; i++){
-            rawText[i] = inputFieldValues[i].toLowerCase()
-        }
-        
-        for(let i = 0; i < rawText.length; i++){
-            rawText[i] = rawText[i].replace(/[.,!?*]/g, "");
-        }
-
         let treatedText: Array<Array<string>> = [[]]
         
-        for(let i = 0; i < rawText.length; i++){
-            treatedText[i] = rawText[i].split(" ")
+        for(let i = 0; i < inputFieldValues.length; i++){
+            treatedText[i] = inputFieldValues[i].toLowerCase().replace(/[.,!?*]/g, "").split(" ")
         }
 
         for(let i = 0; i < treatedText.length; i++){
@@ -54,14 +44,16 @@ export default function PostAnalyzer(){
     return(
         <>
             <h2>Post Analyzer.</h2>
-            <form>            
+            <form className='inputs-container'>            
                 {inputFieldValues.map((inputField, index) => 
-                    <input key={index} type='textarea' value={inputField} onChange={(e) => handleInputChange(e, index)}></input>
-                )}
+                    <input key={index} type='text' className='text-input' value={inputField} onChange={(e) => handleInputChange(e, index)}></input>
+                )}                
+            <div style={{display: 'flex', justifyContent: 'center', marginTop: '5vh'}}>
                 <button onClick={e => addNewInputField(e)}>Add Job Posting.</button>
                 <button onClick={e => handleAnalysis(e)}>Analyze Job Postings.</button>
+            </div>
             </form>
-            <div className='list-container'>
+            <div>
                 <ul>
                     {keywordCountState?.map((keyword, index) => (
                         <li key={index}>{keyword[0]} {keyword[1]}</li>
