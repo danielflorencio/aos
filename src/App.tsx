@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-// import ApplicationsCalculator from './components/ApplicationsCalculator/ApplicationsCalculator'
 import IntroductionPost from './components/IntroductionPost/IntroductionPost'
-// import PostAnalyzer from './components/PostAnalyzer/PostAnalyzer'
 import { CustomRouter } from './components/CustomRouter/CustomRouter'
 
 function App() {
@@ -43,23 +41,3 @@ function App() {
 }
 
 export default App
-
-
-
-var removeDuplicates = function(nums) {
-  let newArray = nums[0]
-
-  for(let i = 0; i < nums.length; i++){
-    
-    for(let n = 0; n < newArray.length; n++){
-        
-      if(newArray[n] !== nums[i]){
-          newArray[n] = nums[i]
-        }
-
-      }
-      
-  }
-  return newArray
-  }
-;
