@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import IntroductionPost from './components/IntroductionPost/IntroductionPost'
+// import IntroductionPost from './components/IntroductionPost/IntroductionPost'
 import { CustomRouter } from './components/CustomRouter/CustomRouter'
 
 function App() {
