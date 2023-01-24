@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-// import IntroductionPost from './components/IntroductionPost/IntroductionPost'
+import IntroductionPost from './components/IntroductionPost/IntroductionPost'
 import { CustomRouter } from './components/CustomRouter/CustomRouter'
+import Footer from './components/Footer/Footer'
 
 function App() {
   const [functionality, setFunctionality] = useState('calculator')
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className='flex-center'>
       <div className='text-container'>
-        {/* <IntroductionPost/> */}
+        <IntroductionPost/>
 
         <div className='custom-nav-container'>
           <div className='nav-block' onClick={handleApplicationsNavClick}>
@@ -34,8 +35,7 @@ function App() {
         </div>
         <CustomRouter functionality={functionality}/>
       </div>
-
-
+      <Footer/>
     </div>
   )
 }

@@ -1,0 +1,14 @@
+.footer{
+    width: 100vw;
+    display: 'flex';
+    align-items: "center";
+    Justify-content: "center";
+    background-color: #17273f;
+    color: #fff;
+}
+a:link{
+    color: red;
+}
+a:visited{
+    color: green;
+}
