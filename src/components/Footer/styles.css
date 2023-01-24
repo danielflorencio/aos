@@ -2,7 +2,7 @@
     width: 100vw;
     display: 'flex';
     align-items: "center";
-    Justify-content: "center";
+    justify-content: "center";
     background-color: #17273f;
     color: #fff;
 }
