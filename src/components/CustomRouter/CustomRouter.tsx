@@ -9,5 +9,5 @@ export function CustomRouter({functionality} : {functionality: string}){
         return(<><PostAnalyzer/></>)
         break;
     }
-    return(<></>) // Do not delete this line. The component needs a valid JSX outside of the switch statement Return to work.
+    return(<></>) // Do not delete this line. The component needs a valid JSX outside of the switch statement Return() to work.
   }

@@ -1,6 +1,5 @@
 .application-container{
     text-align: left;
-    width: 500px;
 }
 button, input{
     width: 100px;
@@ -22,4 +21,10 @@ label, input{
 }
 label{
     max-width: 500px;
+}
+@media (max-width: 550px) {
+    .skill-selection{
+        width: 90%;
+        padding: 0 1rem;
+    }
 }

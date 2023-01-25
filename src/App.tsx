@@ -22,14 +22,14 @@ function App() {
 
   return (
     <div className='flex-center'>
-      <div className='text-container'>
+      <div className='application-container'>
         <IntroductionPost/>
 
         <div className='custom-nav-container'>
-          <div className='nav-block' onClick={handleApplicationsNavClick}>
+          <div className='nav-block flex-center' onClick={handleApplicationsNavClick}>
             <h4>Analyze daily applications</h4>
           </div>
-          <div className='nav-block' onClick={handleJobPostNavClick}>
+          <div className='nav-block flex-center' onClick={handleJobPostNavClick}>
             <h4>Analyze Job Postings</h4>
           </div>
         </div>
